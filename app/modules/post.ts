@@ -8,7 +8,7 @@ export type Post = {
   slug: string;
   title: string;
   markdown: string;
-  body: string;
+  html: string;
 };
 
 export type PostMarkdownAttributes = {
@@ -57,7 +57,8 @@ export async function getPost(slug: string) {
     `Post ${filepath} is missing frontmatter!`
   );
   const html = marked(body);
-  return { slug, html, body, title: attributes.title };
+  const markdown = body;
+  return { slug, html, markdown, title: attributes.title };
 }
 
 export async function createPost(post: NewPost) {

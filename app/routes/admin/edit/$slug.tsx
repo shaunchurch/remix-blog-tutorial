@@ -8,7 +8,7 @@ import {
   useTransition,
 } from "remix";
 import invariant from "tiny-invariant";
-import { createPost, getPost, NewPost, Post } from "~/post";
+import { createPost, getPost, NewPost, Post } from "~/modules/post";
 
 type PostError = {
   title?: boolean;

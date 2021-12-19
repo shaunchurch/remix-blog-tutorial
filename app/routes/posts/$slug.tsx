@@ -1,6 +1,6 @@
 import { LoaderFunction, useLoaderData } from "remix";
 import invariant from "tiny-invariant";
-import { getPost } from "~/post";
+import { getPost, Post } from "~/modules/post";
 
 export const loader: LoaderFunction = async ({ params }) => {
   invariant(params.slug, "expected params.slug");
@@ -8,7 +8,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 };
 
 export default function PostSlug() {
-  const post = useLoaderData();
+  const post = useLoaderData<Post>();
   return (
     <div>
       <h1>
