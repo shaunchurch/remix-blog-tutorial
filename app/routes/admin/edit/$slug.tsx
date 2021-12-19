@@ -85,9 +85,9 @@ export default function NewPost() {
           id="markdown"
           rows={10}
           cols={50}
-          key={post.body}
+          key={post.markdown}
           name="markdown"
-          defaultValue={post.body}
+          defaultValue={post.markdown}
         ></textarea>
       </p>
       <p>
